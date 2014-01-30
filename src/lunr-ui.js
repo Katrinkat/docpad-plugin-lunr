@@ -99,7 +99,7 @@ lunrdoc.init = function(config) {
   lunrdoc.idx = lunr.Index.load(lunrdoc.indexJson);
   // add the behavior
   lunrdoc.inputBox.onkeyup = lunrdoc.doSearch;
-  lunrdoc.inputBox.focus();
+  //lunrdoc.inputBox.focus();
   // do a search now, for when users clicked 'Back' to get here
   lunrdoc.doSearch();
 };
