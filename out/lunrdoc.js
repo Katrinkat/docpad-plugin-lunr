@@ -59,7 +59,7 @@ module.exports = {
       }
     }
     // save the base directory location
-    config.baseLocation = docpad.config.outPath + '/lunr'; 
+    config.baseLocation = docpad.config.outPath + config.lunrOutPath;
     // save some more values for later
     config.rootPath = docpad.config.rootPath;
     // now we loop through all the indexes
@@ -216,6 +216,7 @@ module.exports = {
   },
   // some helper functions we'll provide to the template
   getLunrSearchPage: function(index, placeholder) {
+    var lunrOutPath = this.config.lunrOutPath;
     if (typeof this.config.indexes[index] === 'undefined') {
       console.log('LUNR: getLunrSearchPage will not work unless you specify a valid index from plugins.lunr.indexes in your Docpad configuration file.');
       return;
@@ -225,7 +226,7 @@ module.exports = {
     var dataFilename = this.config.indexes[index].indexFilename;
     var scripts = ['lunr.min.js', dataFilename, 'lunr-ui.min.js'];
     for (var i in scripts) {
-      scriptElements += '<script src="/lunr/' + scripts[i] + 
+      scriptElements += '<script src="' + lunrOutPath + '/' + scripts[i] + 
         '" type="text/javascript"></script>';
     }
     return '<input type="text" class="search-bar" id="lunr-input" placeholder="' + placeholder + '" />' +
