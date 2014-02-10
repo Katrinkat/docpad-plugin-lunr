@@ -6,6 +6,11 @@ module.exports = (BasePlugin) ->
   class LunrPlugin extends BasePlugin
     # Plugin name
     name: 'lunr'
+    constructor: ->
+      # use custom out path or default
+      @config.lunrOutPath ?= '/lunr'
+      return super
+    
     # Provide some helper functions
     extendTemplateData: ({templateData}) ->
       lunrdoc.init(@docpad)
