@@ -13,6 +13,10 @@
       __extends(LunrPlugin, _super);
 
       function LunrPlugin() {
+        var _base;
+        if ((_base = this.config).lunrOutPath == null) {
+          _base.lunrOutPath = '/lunr';
+        }
         return LunrPlugin.__super__.constructor.apply(this, arguments);
       }
 
