@@ -229,7 +229,7 @@ module.exports = {
       scriptElements += '<script src="' + lunrOutPath + '/' + scripts[i] + 
         '" type="text/javascript"></script>';
     }
-    return '<input type="text" class="search-bar" id="lunr-input" placeholder="' + placeholder + '" />' +
+    return '<input type="search" class="search-bar" id="lunr-input" placeholder="' + placeholder + '" />' +
       '<input type="hidden" id="lunr-hidden" />' +
       scriptElements;
   },
@@ -238,7 +238,7 @@ module.exports = {
     searchPage = searchPage || 'search.html';
     submit = submit || 'Go';
     return '<form method="get" action="/' + searchPage + '">' +
-      '<input type="text" class="search-bar" name="keys" placeholder="' + placeholder + '" />' +
+      '<input type="search" class="search-bar" name="keys" placeholder="' + placeholder + '" />' +
       '<input type="submit" value="' + submit + '" />' +
       '</form>';
   }
